@@ -12,7 +12,7 @@ for key,value in map1.items():
    keys1=key
    map1_keys.append(keys1)
 print(map1_keys)
-########Unmap keys for map1#######
+########Unmap keys for map2#######
 for key,value in map2.items():
    keys2=key
    map2_keys.append(keys2)
@@ -35,7 +35,6 @@ while a<len(map1_keys):
     else:
         map_result[map1_keys[a]]=map1[map1_keys[a]]
         map_result[map2_keys[a]] = map2[map2_keys[a]]
-        #print('################')
         a=a+1
 print('#####Result#####')
 print(map_result)
