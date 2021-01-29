@@ -22,7 +22,6 @@ a=0
 while a<len(map1_keys):
     if map1_keys[a] == map2_keys[a]:
     ####Found higest value for key in both maps:
-        #for i in map1:
         for i in map1_keys[a]:
             if map1[i] > map2[i]:
                 map_result[i]=map1[i] #Put higest value in result map from map1
