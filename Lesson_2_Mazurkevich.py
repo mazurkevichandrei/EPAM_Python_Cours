@@ -18,7 +18,7 @@ for key,value in map2.items():
    map2_keys.append(keys2)
 print(map2_keys)
 a=0
-###Chesk key in map1 == key in map2
+###Check key in map1 == key in map2
 while a<len(map1_keys):
     if map1_keys[a] == map2_keys[a]:
     ####Found higest value for key in both maps:
