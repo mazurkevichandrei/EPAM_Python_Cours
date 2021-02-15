@@ -5,13 +5,19 @@ class AddContent:
         self.content=content
         self.header=header
     def pubdate(self):
-        publishtime = datetime.date.today()
-        print("DATE OF PUBLISHING: ",publishtime,"\n")
+        global publishtime
+        publishtime = str(datetime.date.today())
+        return  publishtime
 
 def Publish():
+    target_file=open("data.txt","a")
+    target_file.write(news.header)
+    target_file.write("\n")
+    target_file.write(news.content+"\n")
+    target_file.write("DATE OF PUBLISHING: "+publishtime+"\n")
     print(news.header)
     print(news.content)
-    news.pubdate()
+    print("DATE OF PUBLISHING: "+publishtime+"\n")
 
 def AddNews():
     global txt
@@ -20,10 +26,12 @@ def AddNews():
     if newstype == '1':
         txt = input("Введите спортивную новость:\n")
         news = AddContent(txt, '\n===SPORT_NEWS===')
+        news.pubdate()
         Publish()
     elif newstype == '2':
         txt = input("Введите текст новости:\n")
         news = AddContent(txt, '\n===NEWS===')
+        news.pubdate()
         Publish()
 
 continuework=''
