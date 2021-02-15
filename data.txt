@@ -1,16 +1,16 @@
 
 ===SPORT_NEWS===
-Sport news 1
-DATE OF PUBLISHING: 2021-02-15 17:33
+Соболенко покинула Australian Open, проиграв в тяжелейшем матче Серене Уильямс
+DATE OF PUBLISHING: 2021-02-15 17:38
 
 ===SPORT_NEWS===
-Sport news 2
-DATE OF PUBLISHING: 2021-02-15 17:33
+Елена Левченко стала игроком греческого «Панатинаикоса»
+DATE OF PUBLISHING: 2021-02-15 17:39
 
 ===NEWS===
-News 1
-DATE OF PUBLISHING: 2021-02-15 17:33
+Предприниматели теряют рынок и покупателей: их вытесняют торговые сети
+DATE OF PUBLISHING: 2021-02-15 17:41
 
 ===NEWS===
-News 2
-DATE OF PUBLISHING: 2021-02-15 17:34
+В Беларуси заканчивается реформа по повышению пенсионного возраста
+DATE OF PUBLISHING: 2021-02-15 17:41
