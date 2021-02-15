@@ -6,7 +6,7 @@ class AddContent:
         self.header=header
     def pubdate(self):
         global publishtime
-        publishtime = str(datetime.date.today())
+        publishtime = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M'))
         return  publishtime
 
 def Publish():
