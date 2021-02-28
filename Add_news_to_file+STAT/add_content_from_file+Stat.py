@@ -11,7 +11,7 @@
 #Удаление из сорсового файла после прочтения тоже пока не сделал
 #Приложенный итоговый файл пустой для удобства тестирования
 
-#Добавлена функция подсчёта статистики слов в итоговом файле с записью в count_words.csv
+#Добавлена функция подсчёта статистики слов и букв в итоговом файле с записью в count_words.csv/stat_letters.csv
 
 import datetime
 
@@ -98,6 +98,7 @@ def wordsstattocsv():
     commonarr = []
     #Массив, в который будем записывать только слова из исходного файла data.txt
     commonwords = []
+    letters = []
     for item in arr:
         #Разделяем каждый абзац на слова..
         a = item.split(' ')
@@ -111,7 +112,14 @@ def wordsstattocsv():
         if (item != '') & (item == result.group(0)):
             commonwords.append(item)
     #print(commonwords)
-    print('\n')
+    #print('\n')
+    #Делим слова на буквы:
+    for item in commonwords:
+        word = list(item)
+        for item in word:
+            letters.append(item)
+    #Общее количество букв:
+    countletters = len(letters)
     map = {}
     #Считаем статистику слов:
     for item in commonwords:
@@ -120,12 +128,24 @@ def wordsstattocsv():
         else:
             map[item] = 1
     #print(map)
-    #Запись статистики в CSV:
-    with open('count_words.csv', 'w') as resultfile:
+    #Считаем статистику букв:
+    mapletters = {}
+    for item in letters:
+        if item in mapletters.keys():
+            mapletters[item] = mapletters[item] + 1
+        else:
+            mapletters[item] = 1
+    #Запись статистики слов в CSV:
+    with open('count_words.csv', 'w',newline='') as resultfile:
         writer = csv.writer(resultfile, delimiter='-')
         for key, value in map.items():
             writer.writerow([key, value])
-
+    #Запись статистики букв в CSV:
+    with open('stat_letters.csv', 'w',newline='') as resultfile:
+        writer1 = csv.writer(resultfile, delimiter=';')
+        writer1.writerow(['Letter', 'Count_in_text', 'Percent_in_text'])
+        for key, value in mapletters.items():
+            writer1.writerow([key, mapletters[key], mapletters[key] / countletters * 100])
 
 continuework=''
 #Запускаем итоговую функция управления добавлением новостей при запуске приложения
