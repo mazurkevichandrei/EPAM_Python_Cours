@@ -139,10 +139,10 @@ def wordsstattocsv():
 
     for key, value in mapletters.items():
         mapletterstofile[key]=[mapletters[key], mapletters[key] / countletters * 100]
-    #Запись статистики слов в CSV:
+    #Запись статистики слов в Json:
     with open('count_words.json', 'w') as resultfile:
         resultfile.write(str(map))
-    #Запись статистики букв в CSV:
+    #Запись статистики букв в Json:
     with open('stat_letters.json', 'w') as resultfile:
         resultfile.write(str(mapletterstofile))
 
